@@ -13,10 +13,46 @@ namespace NZWalks.API.Repositories
         {
             dbContext = _dbContext;
         }
-        public async Task<List<Region>> GetAll() 
+        public async Task<List<Region>> GetAllAsync() 
         {
             var regions = await dbContext.Regions.ToListAsync();
             return regions;
+        }
+
+        public async Task<Region?> GetByIdAsync(Guid id) 
+        {
+            var region = await dbContext.Regions.FirstOrDefaultAsync(e => e.Id == id);
+            return region; 
+        }
+
+        public async Task<Region> CreateAsync(Region region)
+        {
+            await dbContext.AddAsync(region);
+            await dbContext.SaveChangesAsync();
+            return region;
+        }
+
+        public async Task<Region?> UpdateAsync(Guid id, Region region) {
+            var existingRegion = await dbContext.Regions.FirstOrDefaultAsync(e => e.Id == id);
+            if (existingRegion == null) return null;
+
+            existingRegion.Name = region.Name;
+            existingRegion.Code = region.Code;
+            existingRegion.RegionImageUrl = region.RegionImageUrl;
+            await dbContext.SaveChangesAsync();
+            return existingRegion;
+
+        }
+
+        public async Task<Region?> DeleteAsync(Guid id) 
+        {
+            var regionDomainModel = await dbContext.Regions.FirstOrDefaultAsync(e => e.Id == id);
+            if (regionDomainModel == null) return null;
+
+            dbContext.Regions.Remove(regionDomainModel);
+            await dbContext.SaveChangesAsync();
+            return regionDomainModel; 
+
         }
     }
 }
