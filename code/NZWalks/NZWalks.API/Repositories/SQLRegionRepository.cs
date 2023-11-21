@@ -27,7 +27,7 @@ namespace NZWalks.API.Repositories
 
         public async Task<Region> CreateAsync(Region region)
         {
-            await dbContext.AddAsync(region);
+            await dbContext.Regions.AddAsync(region);
             await dbContext.SaveChangesAsync();
             return region;
         }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NZWalks.API.CustomActionFilters;
 using NZWalks.API.Data;
 using NZWalks.API.Models.Domain;
 using NZWalks.API.Models.DTO;
@@ -41,23 +42,32 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpPost]
+        [ValidateModel]
         [Route("Create")]
         public async Task<IActionResult> Create([FromBody] AddRegionRequestDto regionRequest) {
-
-            var regionDomainModel = autoMapper.Map<Region>(regionRequest);
-            regionDomainModel = await regionRepository.CreateAsync(regionDomainModel);
-            var regionResponseDto = autoMapper.Map<RegionDto>(regionDomainModel);
-            return CreatedAtAction(nameof(GetById), new { id = regionDomainModel.Id }, regionResponseDto);
+                var regionDomainModel = autoMapper.Map<Region>(regionRequest);
+                regionDomainModel = await regionRepository.CreateAsync(regionDomainModel);
+                var regionResponseDto = autoMapper.Map<RegionDto>(regionDomainModel);
+                return CreatedAtAction(nameof(GetById), new { id = regionDomainModel.Id }, regionResponseDto);   
         }
 
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> Update([FromRoute] Guid id,[FromBody] UpdateRegionRequestDto regionRequest) {
-            var regionDomainModel = autoMapper.Map<Region>(regionRequest);
-            regionDomainModel = await regionRepository.UpdateAsync(id, regionDomainModel);
-            if (regionDomainModel == null) return NotFound();
-            var regionResponseDto = autoMapper.Map<RegionDto>(regionDomainModel);
-            return Ok(regionResponseDto);
+
+            if (ModelState.IsValid)
+            {
+                var regionDomainModel = autoMapper.Map<Region>(regionRequest);
+                regionDomainModel = await regionRepository.UpdateAsync(id, regionDomainModel);
+                if (regionDomainModel == null) return NotFound();
+                var regionResponseDto = autoMapper.Map<RegionDto>(regionDomainModel);
+                return Ok(regionResponseDto);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+          
         }
         
         [HttpDelete]
