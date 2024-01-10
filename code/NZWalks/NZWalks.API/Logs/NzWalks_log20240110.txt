@@ -1,0 +1,42 @@
+2024-01-10 21:54:53.171 +05:00 [INF] User profile is available. Using 'C:\Users\aqasy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-10 21:54:53.543 +05:00 [FTL] Application startup exception
+System.InvalidOperationException: An error occurred when configuring the exception handler middleware. Either the 'ExceptionHandlingPath' or the 'ExceptionHandler' property must be set in 'UseExceptionHandler()'. Alternatively, set one of the aforementioned properties in 'Startup.ConfigureServices' as follows: 'services.AddExceptionHandler(options => { ... });' or configure to generate a 'ProblemDetails' response in 'service.AddProblemDetails()'.
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl..ctor(RequestDelegate next, ILoggerFactory loggerFactory, IOptions`1 options, DiagnosticListener diagnosticListener, IProblemDetailsService problemDetailsService)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware..ctor(RequestDelegate next, ILoggerFactory loggerFactory, IOptions`1 options, DiagnosticListener diagnosticListener)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.ConstructorInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-01-10 21:56:15.314 +05:00 [INF] User profile is available. Using 'C:\Users\aqasy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-10 21:56:15.520 +05:00 [FTL] Application startup exception
+System.InvalidOperationException: An error occurred when configuring the exception handler middleware. Either the 'ExceptionHandlingPath' or the 'ExceptionHandler' property must be set in 'UseExceptionHandler()'. Alternatively, set one of the aforementioned properties in 'Startup.ConfigureServices' as follows: 'services.AddExceptionHandler(options => { ... });' or configure to generate a 'ProblemDetails' response in 'service.AddProblemDetails()'.
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl..ctor(RequestDelegate next, ILoggerFactory loggerFactory, IOptions`1 options, DiagnosticListener diagnosticListener, IProblemDetailsService problemDetailsService)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware..ctor(RequestDelegate next, ILoggerFactory loggerFactory, IOptions`1 options, DiagnosticListener diagnosticListener)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.ConstructorInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-01-10 21:56:50.399 +05:00 [INF] User profile is available. Using 'C:\Users\aqasy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-10 21:56:50.956 +05:00 [INF] Now listening on: https://localhost:7011
+2024-01-10 21:56:50.958 +05:00 [INF] Now listening on: http://localhost:5241
+2024-01-10 21:56:50.962 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-10 21:56:50.963 +05:00 [INF] Hosting environment: Development
+2024-01-10 21:56:50.964 +05:00 [INF] Content root path: C:\Users\aqasy\Desktop\Learning-Dotnet-Core-WebAPI\code\NZWalks\NZWalks.API
+2024-01-10 21:56:51.929 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7011/swagger/index.html - -
+2024-01-10 21:56:52.939 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7011/swagger/index.html - - - 200 - text/html;charset=utf-8 1014.1846ms
+2024-01-10 21:56:52.946 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7011/_framework/aspnetcore-browser-refresh.js - -
+2024-01-10 21:56:52.981 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7011/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 35.5380ms
+2024-01-10 21:56:53.529 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7011/_vs/browserLink - -
+2024-01-10 21:56:53.633 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7011/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 104.6420ms
+2024-01-10 21:56:53.910 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7011/swagger/v1/swagger.json - -
+2024-01-10 21:56:54.210 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7011/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 300.0473ms

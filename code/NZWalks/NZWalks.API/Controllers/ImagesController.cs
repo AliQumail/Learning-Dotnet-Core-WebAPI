@@ -19,7 +19,7 @@ namespace NZWalks.API.Controllers
 
 
         // POST: /api/Images/Upload
-        [HttpPost]
+      /*  [HttpPost]
         [Route("Upload")]
         public async Task<IActionResult> Upload([FromForm] ImageUploadRequestDto request)
         {
@@ -46,7 +46,7 @@ namespace NZWalks.API.Controllers
             }
 
             return BadRequest(ModelState);
-        }
+        }*/
 
 
         private void ValidateFileUpload(ImageUploadRequestDto request)
